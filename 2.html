@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات البطاقة الشخصية</title>
+    <meta name="description" content="معلومات عن البطاقة الشخصية لدولة حضرموت العربية">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2e8; /* خلفية بلون فاتح يشبه لون الشعار */
+            overflow-x: hidden;
+        }
+        /* الرأس */
+        .header {
+            background-color: #8b5e3c; /* لون بني غامق من الشعار */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #d4c5a2; /* لون ذهبي فاتح */
+        }
+        /* القائمة الجانبية */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: -300px; /* جعل القائمة بعيداً عن النص */
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border-left: 5px solid #8b5e3c; /* لون الشعار كطرف للقائمة */
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #8b5e3c;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            color: #2e5236; /* لون أخضر مستوحى من الشعار */
+        }
+        /* الزر الدائري */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px; /* وضع الزر في الزاوية */
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            transition: right 0.3s ease; /* تحريك الزر مع القائمة */
+        }
+        .toggle-btn img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .sidebar.active {
+            right: 0; /* إظهار القائمة عند تفعيلها */
+        }
+        .toggle-btn.active {
+            right: 270px; /* تحريك الزر عندما تكون القائمة مفعلة */
+        }
+        /* المحتوى الرئيسي */
+        .content {
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .banner {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .banner img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        /* الأقسام */
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #8b5e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <h1>معلومات البطاقة الشخصية</h1>
+        <img src="images/مجلس حضرموت.png" alt="شعار مجلس حضرموت">
+    </header>
+
+    <!-- زر إظهار/إخفاء القائمة -->
+    <button class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()">
+        <img src="images/الشعار.png" alt="شعار دولة حضرموت">
+    </button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar" id="sidebar">
+        <h2>الخدمات</h2>
+        <ul>
+            <li><a href="index.html">الصفحة الرئيسية</a></li> <!-- تغيير هنا -->
+            <li><a href="1.html">الجواز والجنسية</a></li>
+            <li><a href="3.html">رخصة قيادة</a></li>
+        </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- بانر أو شعار النص -->
+        <div class="banner">
+            <img src="images/البطاقة.png" alt="واجهة البطاقة الشخصية">
+        </div>
+
+        <!-- قسم معلومات البطاقة الشخصية -->
+        <div class="section">
+            <h2>معلومات عن البطاقة الشخصية</h2>
+            <p>تعتبر البطاقة الشخصية من الوثائق الأساسية التي تثبت هوية المواطن في دولة حضرموت. تحتوي البطاقة على معلومات شخصية مثل الاسم، تاريخ الميلاد، ورقم الهوية. تم تصميم البطاقة بأسلوب حديث يضمن حماية المعلومات الشخصية.</p>
+            <img src="images/البطاقة2.png" alt="واجهة خلفية البطاقة الشخصية" style="width: 100%; max-width: 600px; display: block; margin: auto;">
+            <p>تتميز البطاقة الخلفية بمعلومات إضافية تعزز من إمكانية التحقق من هوية صاحب البطاقة، مما يساهم في تعزيز الأمان والموثوقية.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript لإظهار وإخفاء القائمة -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var toggleBtn = document.getElementById("toggle-btn");
+            sidebar.classList.toggle("active");
+            toggleBtn.classList.toggle("active"); // تحريك الزر مع القائمة
+        }
+    </script>
+
+</body>
+</html>

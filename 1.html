@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دَوْلَةُ حَضْرَمَوْتَ العَرَبِيَّةُ - الجوازات والجنسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Scheherazade New', serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2e8;
+            overflow-x: hidden;
+        }
+        /* الرأس */
+        .header {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* تعديل لتوسيط المحتوى */
+        }
+        .header img {
+            height: auto;
+            width: 80%; /* جعل العرض 80% لزيادة حجم الصورة */
+            max-height: 100px; /* تحديد الحد الأقصى للارتفاع */
+            margin: 0; /* إزالة الهامش */
+            border: 5px solid transparent; /* إضافة حد شفاف */
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* إحاطة باللون الأحمر */
+        }
+        /* القائمة الجانبية */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: -300px; /* جعل القائمة بعيداً عن النص */
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border-left: 5px solid #8b5e3c; /* لون الشعار كطرف للقائمة */
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #8b5e3c;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            color: #2e5236; /* لون أخضر مستوحى من الشعار */
+        }
+        /* الزر الدائري */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px; /* وضع الزر في الزاوية */
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            transition: right 0.3s ease; /* تحريك الزر مع القائمة */
+        }
+        .toggle-btn img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .sidebar.active {
+            right: 0; /* إظهار القائمة عند تفعيلها */
+        }
+        .toggle-btn.active {
+            right: 270px; /* تحريك الزر عندما تكون القائمة مفعلة */
+        }
+        .content {
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .banner {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .banner img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #8b5e3c;
+            text-align: center;
+        }
+        .section img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: auto;
+        }
+        .section p, .section ul {
+            text-align: center;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .requirements {
+            text-align: right;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <img src="images/دولة حضرموت العربية.png" alt="شعار دولة حضرموت">
+    </header>
+
+    <!-- زر إظهار/إخفاء القائمة -->
+    <button class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()">
+        <img src="images/الشعار.png" alt="شعار دولة حضرموت">
+    </button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar" id="sidebar">
+        <h2>الخدمات</h2>
+        <ul>
+            <li><a href="index.html">الصفحة الرئيسية</a></li> <!-- إضافة رابط للصفحة الرئيسية -->
+            
+            <li><a href="2.html">بطاقة شخصية</a></li>
+            <li><a href="3.html">رخصة قيادة</a></li>
+        </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- بانر الجوازات والجنسية -->
+        <div class="banner">
+            <img src="images/الجواز.png" alt="صورة الجواز">
+        </div>
+
+        <!-- قسم معلومات الجوازات والجنسية -->
+        <div class="section">
+            <h2>معلومات عن الجوازات والجنسية</h2>
+            <p>تسعى دولة حضرموت لتقديم خدمات إصدار الجوازات وجوازات السفر لمواطنيها، مما يسهل تنقلهم ويعزز حضورهم الدولي. يتضمن هذا القسم شروط ومتطلبات الحصول على الجواز والجنسية.</p>
+            <img src="images/الشعار.png" alt="شعار حضرموت">
+        </div>
+
+        <!-- قسم المتطلبات -->
+        <div class="section">
+            <h2>متطلبات الحصول على الجواز</h2>
+            <ul class="requirements">
+                <li>تقديم شهادة الميلاد الأصلية.</li>
+                <li>إثبات الإقامة في دولة حضرموت لمدة لا تقل عن 10 سنوات.</li>
+                <li>صورة شخصية حديثة بخلفية بيضاء.</li>
+                <li>دفع الرسوم المقررة لإصدار الجواز.</li>
+            </ul>
+        </div>
+
+        <!-- قسم شروط الإقامة الدائمة -->
+        <div class="section">
+            <h2>الإقامة الدائمة للمقيمين</h2>
+            <p>يُمنح المقيم على أرض حضرموت منذ عام 1994 إقامة دائمة، مع الاستفادة من الخدمات المختلفة، ولكن دون الحصول على الجنسية أو الجواز. تُعد الإقامة الدائمة خيارًا ملائمًا لمن يرغب في الاستقرار والاستفادة من التسهيلات داخل الدولة.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript لإظهار وإخفاء القائمة -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var toggleBtn = document.getElementById("toggle-btn");
+            sidebar.classList.toggle("active");
+            toggleBtn.classList.toggle("active"); // تحريك الزر مع القائمة
+        }
+    </script>
+
+</body>
+</html>

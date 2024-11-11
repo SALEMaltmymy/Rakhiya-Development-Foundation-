@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رخصة القيادة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Scheherazade New', serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2e8;
+            overflow-x: hidden;
+        }
+        /* الرأس */
+        .header {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* توسيط المحتوى */
+        }
+        .header img {
+            height: auto;
+            width: 80%; /* جعل العرض 80% لزيادة حجم الصورة */
+            max-height: 100px; /* تحديد الحد الأقصى للارتفاع */
+            margin: 0; /* إزالة الهامش */
+        }
+        /* القائمة الجانبية */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: -300px; /* جعل القائمة بعيداً عن النص */
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border-left: 5px solid #8b5e3c; /* لون الشعار كطرف للقائمة */
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #8b5e3c;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            color: #2e5236; /* لون أخضر مستوحى من الشعار */
+        }
+        /* الزر الدائري */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px; /* وضع الزر في الزاوية */
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            transition: right 0.3s ease; /* تحريك الزر مع القائمة */
+        }
+        .toggle-btn img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .sidebar.active {
+            right: 0; /* إظهار القائمة عند تفعيلها */
+        }
+        .toggle-btn.active {
+            right: 270px; /* تحريك الزر عندما تكون القائمة مفعلة */
+        }
+        .content {
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #8b5e3c;
+            text-align: center;
+        }
+        .section img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <img src="images/دولة حضرموت العربية.png" alt="شعار دولة حضرموت">
+    </header>
+
+    <!-- زر إظهار/إخفاء القائمة -->
+    <button class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()">
+        <img src="images/الشعار.png" alt="شعار دولة حضرموت">
+    </button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar" id="sidebar">
+        <h2>الخدمات</h2>
+        <ul>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="1.html">الجوازات والجنسية</a></li>
+            <li><a href="2.html">بطاقة شخصية</a></li>
+        </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <h2>رخصة القيادة</h2>
+        <div class="section">
+            <h3>معلومات عامة عن رخصة القيادة</h3>
+            <p>تعتبر رخصة القيادة وثيقة رسمية تمنح للأشخاص الذين اجتازوا الاختبارات اللازمة للقيادة. تُعتمد رخص القيادة من قبل الجهات المختصة في دولة حضرموت وتُستخدم للتأكد من أن السائقين مؤهلون للقيادة بشكل آمن.</p>
+        </div>
+
+        <div class="section">
+            <h3>متطلبات الحصول على رخصة القيادة</h3>
+            <ul>
+                <li>تقديم بطاقة الهوية الشخصية.</li>
+                <li>اجتياز اختبار القيادة النظري.</li>
+                <li>اجتياز اختبار القيادة العملي.</li>
+                <li>تقديم صور شخصية حديثة.</li>
+                <li>دفع الرسوم المطلوبة.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>نموذج اللوحات</h3>
+            <h4>صورة رخصة القيادة</h4>
+            <img src="images/رخصة قيادة.png" alt="رخصة قيادة">
+
+            <h4>صورة لوحة السيارة</h4>
+            <img src="images/لوحة.png" alt="لوحة السيارة">
+
+            <h4>صورة اللوحة المؤقتة</h4>
+            <img src="images/لوحة موقت.png" alt="لوحة مؤقتة">
+        </div>
+
+        <div class="section">
+            <h3>ملاحظات هامة</h3>
+            <p>يجب على المقيمين في حضرموت منذ عام 1994 أن يعرفوا أنهم يحصلون على إقامة دائمة، لكنهم ليسوا مواطنين وبالتالي لا يمكنهم الحصول على جواز سفر.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript لإظهار وإخفاء القائمة -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var toggleBtn = document.getElementById("toggle-btn");
+            sidebar.classList.toggle("active");
+            toggleBtn.classList.toggle("active"); // تحريك الزر مع القائمة
+        }
+    </script>
+
+</body>
+</html>

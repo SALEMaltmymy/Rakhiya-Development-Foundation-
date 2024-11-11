@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دَوْلَةُ حَضْرَمَوْتَ العَرَبِيَّةُ</title>
+    <meta name="description" content="الموقع الرسمي لدولة حضرموت العربية">
+    <!-- استيراد خط مشابه للثلث من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2e8; /* خلفية بلون فاتح يشبه لون الشعار */
+            overflow-x: hidden;
+        }
+        /* الرأس */
+        .header {
+            background-color: #8b5e3c; /* لون بني غامق من الشعار */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #d4c5a2; /* لون ذهبي فاتح */
+            font-family: 'Amiri', serif; /* خط مشابه للثلث */
+        }
+        /* القائمة الجانبية */
+        .sidebar {
+            width: 200px; /* تقليل عرض القائمة */
+            background-color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: -250px; /* جعل القائمة بعيداً عن النص */
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border-left: 5px solid #8b5e3c; /* لون الشعار كطرف للقائمة */
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #8b5e3c;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            color: #2e5236; /* لون أخضر مستوحى من الشعار */
+        }
+        /* الزر الدائري */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px; /* وضع الزر في الزاوية */
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            transition: right 0.3s ease; /* تحريك الزر مع القائمة */
+        }
+        .toggle-btn img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .sidebar.active {
+            right: 0; /* إظهار القائمة عند تفعيلها */
+        }
+        .toggle-btn.active {
+            right: 220px; /* تحريك الزر عندما تكون القائمة مفعلة */
+        }
+        /* المحتوى الرئيسي */
+        .content {
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .banner {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .banner img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        /* الأقسام */
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #8b5e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <h1>دَوْلَةُ حَضْرَمَوْتَ العَرَبِيَّةُ</h1>
+        <img src="images/مجلس حضرموت.png" alt="شعار مجلس حضرموت">
+    </header>
+
+    <!-- زر إظهار/إخفاء القائمة -->
+    <button class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()">
+        <img src="images/الشعار.png" alt="شعار دولة حضرموت">
+    </button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar" id="sidebar">
+        <h2>الخدمات</h2>
+        <ul>
+            <li><a href="1.html">الجواز والجنسية</a></li>
+            <li><a href="4.html">التقديم</a></li>
+            <li><a href="2.html">بطاقة شخصية</a></li>
+            <li><a href="3.html">رخصة قيادة</a></li>
+        </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- بانر أو شعار النص -->
+        <div class="banner">
+            <img src="images/دولة حضرموت العربية.png" alt="دولة حضرموت العربية">
+        </div>
+
+        <!-- قسم الموقع الجغرافي -->
+        <div class="section">
+            <h2>الموقع الجغرافي لدولة حضرموت</h2>
+            <img src="images/الموقع.png" alt="خريطة جغرافية لدولة حضرموت" style="width: 100%; max-width: 600px; display: block; margin: auto;">
+            <p>تتميز دولة حضرموت بموقعها الاستراتيجي في جنوب شبه الجزيرة العربية، حيث تمتد على ساحل البحر العربي وتحيط بها التضاريس الجبلية والسهول الخصبة. يشكل هذا الموقع نقطة التقاء للعديد من الثقافات والحضارات على مر العصور، مما ساهم في تشكيل هوية حضرموت الفريدة.</p>
+        </div>
+
+        <!-- قسم العلم -->
+        <div class="section">
+            <h2>علم حضرموت</h2>
+            <img src="images/علم حضرموت.png" alt="علم حضرموت" style="width: 100%; max-width: 300px; display: block; margin: auto;">
+            <p>يمثل علم حضرموت رموز الهوية والانتماء الوطني، ويعكس تاريخ وحضارة هذه الدولة.</p>
+        </div>
+
+        <!-- قسم الخدمات -->
+        <div class="section">
+            <h2>الخدمات</h2>
+            <p>توفر دولة حضرموت خدمات متنوعة للمواطنين، تشمل إصدار الجوازات، البطاقة الشخصية، ورخص القيادة وغيرها من الخدمات الحكومية التي تسهم في تيسير الحياة اليومية للمواطنين والمقيمين.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript لإظهار وإخفاء القائمة -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var toggleBtn = document.getElementById("toggle-btn");
+            sidebar.classList.toggle("active");
+            toggleBtn.classList.toggle("active"); // تحريك الزر مع القائمة
+        }
+    </script>
+
+</body>
+</html>جميع
